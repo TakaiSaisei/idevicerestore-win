@@ -43,6 +43,7 @@ jobs:
         repos=("libplist" "libtatsu" "libimobiledevice-glue" "libusbmuxd" "libimobiledevice" "libirecovery" "idevicerestore")
         mkdir -p out
         export DESTDIR="$PWD/out"
+        export PKG_CONFIG_PATH="$DESTDIR/mingw64/lib/pkgconfig:$PKG_CONFIG_PATH"
 
         for repo in "${repos[@]}"; do
             echo "Building $repo..."
